@@ -5,7 +5,7 @@
 #include <string>
 class Tree {
  private:
-  struct Node {
+ struct Node {
   char hyi;
   std::vector<Node*> greList;
   };
@@ -38,6 +38,7 @@ class Tree {
     for (size_t i = 0; i < root->greList.size(); i++)
       prm(root->greList[i], symbol);
   }
+
  public:
     std::string operator[](int i) const {
       if (i >= permutation.size())
