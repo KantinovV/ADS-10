@@ -5,12 +5,13 @@
 #include  "tree.h"
 
 std::vector<char> getPerm(const Tree& tree, int n) {
+  // напишите реализацию
     std::vector<char> ret_per;
-    int sdfghjkl = tree.per;
-    int figihbu = tree.ner;
-    if ((n <= figihbu) && (n > 0)) {
-        n = (n - 1) * sdfghjkl;
-        for (int i = 0; i < sdfghjkl; i++) {
+    int s = tree.per_size;
+    int f = tree.n_fact;
+    if ((n <= f) && (n > 0)) {
+        n = (n - 1) * s;
+        for (int i = 0; i < s; i++) {
             ret_per.push_back(tree.data[n + i]);
         }
     }
