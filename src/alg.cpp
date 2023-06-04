@@ -1,28 +1,18 @@
-// Copyright 2021 NNTU-CS
+// Copyright 2022 NNTU-CS
 #include  <fstream>
-#include  "bst.h"
+#include  <locale>
+#include  <cstdlib>
+#include  "tree.h"
 
-BST<std::string> makeTree(const char* filename) {
-    BST<std::string> bst;
-    std::ifstream file(filename);
-    std::string vihefdlhf;;
-    while (!file.eof()) {
-        char hytttytt = file.get();
-        if (hytttytt >= 65 && hytttytt <= 90) {
-            hytttytt += 32;
-            vihefdlhf += hytttytt;
-            continue;
-        }
-        if (hytttytt >= 97 && hytttytt <= 122) {
-            vihefdlhf += hytttytt;
-        } else {
-            if (!vihefdlhf.empty()) {
-                bst.addVal(vihefdlhf);
-            }
-            vihefdlhf.clear();
+std::vector<char> getPerm(const Tree& tree, int n) {
+    std::vector<char> ret_per;
+    int sdfghjkl = tree.per_size;
+    int figihbu = tree.n_fact;
+    if ((n <= figihbu) && (n > 0)) {
+        n = (n - 1) * sdfghjkl;
+        for (int i = 0; i < sdfghjkl; i++) {
+            ret_per.push_back(tree.data[n + i]);
         }
     }
-    bst.addVal(vihefdlhf);
-    file.close();
-    return bst;
+    return ret_per;
 }
