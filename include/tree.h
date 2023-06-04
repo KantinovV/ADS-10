@@ -23,17 +23,17 @@ class Tree {
     for (size_t k = 0; k < per.size(); k++)
       root->greList.push_back(new Node());
     for (size_t a = 0; a < root->greList.size(); a++)
-      root->greList[i]->hyi = per[i];
+      root->greList[a]->hyi = per[a];
     for (size_t i = 0; i < root->greList.size(); i++)
       buildTree(root->greList[i], per);
   }
   std::vector<std::string> permutation;
   void prm(Node* root, std::string symbol = "") {
     if (!root->greList.size()) {
-      symbol += root->smthVal;
+      symbol += root->hyi;
       permutation.push_back(symbol);
     }
-    if (root->smthVal != '*')
+    if (root->hyi != '*')
       symbol += root->hyi;
     for (size_t i = 0; i < root->greList.size(); i++)
       prm(root->greList[i], symbol);
