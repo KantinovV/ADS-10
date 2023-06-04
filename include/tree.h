@@ -11,6 +11,7 @@ class Tree {
         std::vector<Node*> childs;
     };
     Node* root;
+
  public:
     int per_size;
     int n_fact;
