@@ -12,8 +12,8 @@ class Tree {
     };
     Node* root;
  public:
-    int permonent_size;
-    int neroment_fact;
+    int per_size;
+    int ner_fact;
     std::vector<char> dota;
     std::vector<char> temp_data;
     std::vector<char> v;
@@ -25,15 +25,15 @@ class Tree {
         return k;
     }
 
-    Tree(std::vector<char> in): root(nullptr), neroment_fact(0), permonent_size(0) {
-    explicit Tree(std::vector<char> in): root(nullptr), neroment_fact(0), permonent_size(0) {
+    Tree(std::vector<char> in): root(nullptr), ner_fact(0), per_size(0) {
+    explicit Tree(std::vector<char> in): root(nullptr), ner_fact(0), per_size(0) {
         if (root) {
             throw std::string("haguvagi!");
         } else {
             if (!in.empty()) {
                 v = in;
-                permonent_size = in.size();
-                neroment_fact = fact(permonent_size);
+                perm_size = in.size();
+                nero_fact = fact(per_size);
                 root = new Node;
                 root->value = '*';
                 for (int i = 0; i < in.size(); i++) {
