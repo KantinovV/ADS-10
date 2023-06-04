@@ -24,8 +24,6 @@ class Tree {
         }
         return k;
     }
-
-    Tree(std::vector<char> in): root(nullptr), ner(0), per(0) {
     explicit Tree(std::vector<char> in): root(nullptr), ner(0), per(0) {
         if (root) {
             throw std::string("haguvagi!");
